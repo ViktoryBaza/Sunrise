@@ -49,7 +49,7 @@ nav a {
     color: #ccc;
     margin-left: 20px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .hero {
@@ -113,20 +113,49 @@ nav a {
 }
 
 .btn {
+    position: relative;
     display: inline-block;
     padding: 20px 30px;
     background: #fff;
-    color: #222222;
+    color: #222;
     font-size: 16px;
-    text-align: center;
-    text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s;
+    text-decoration: none;
+    border-radius: 8px;
+    z-index: 1;
+    overflow: hidden;
+    transition:
+        color 0.3s,
+        background-color 0.3s;
+}
+.btn:hover {
+    background-color: #f0f0f0;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+
+    background: linear-gradient(90deg, #302459, #698a8f, #589184, #3e2d7a);
+    background-size: 300% 100%;
+    border-radius: 8px;
+    z-index: -1;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    transition: background-position 1s linear;
+    background-position: 0% 50%;
 }
 
-.btn:hover {
-    background: #ccc;
+.btn:hover::before {
+    background-position: 100% 50%;
 }
+
 .page__top {
     display: flex;
     position: relative;
@@ -283,6 +312,7 @@ nav a {
     background-color: #282829;
     padding: 0;
     margin-top: 200px;
+    line-height: 1.5;
 }
 
 .img-box {
@@ -350,7 +380,6 @@ nav a {
 
 @media (max-width: 1024px) {
     .features {
-        line-height: 1.5;
         margin-top: 100px;
     }
 
