@@ -173,8 +173,6 @@ nav a {
     background-position: center;
     z-index: 1;
 }
-.page__top-content {
-}
 @media (max-width: 1200px) {
     header {
         background-color: rgba(20, 20, 20, 0.85);
@@ -270,7 +268,10 @@ nav a {
     .hero {
         padding: 70px 20px 40px 40px;
     }
-
+    nav a {
+        margin-left: 0px;
+        padding: 5px;
+    }
     .hero-text {
         font-size: 18px;
         margin-top: 250px;
@@ -432,7 +433,7 @@ nav a {
     }
 
     .features-list ul {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .features-list li {
@@ -791,5 +792,6 @@ form h2 {
     }
     .footer__btn {
         width: 60px;
+        padding-right: 10px;
     }
 }
